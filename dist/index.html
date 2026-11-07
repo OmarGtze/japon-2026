@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f4ef">
+  <meta name="description" content="Planificador interactivo para el viaje a Japón del 8 al 23 de diciembre de 2026.">
+  <title>Japón, a tu ritmo · Diciembre 2026</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">日</span><span>JAPÓN <small>2026</small></span></div>
+      <div class="top-actions"><span class="saved" id="saved">Guardado en este navegador</span><button class="ghost" id="resetBtn" type="button">Restablecer plan</button></div>
+    </header>
+
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy"><div class="eyebrow"><span class="dot"></span> TU VIAJE · 16 DÍAS</div><h1 id="hero-title">Japón, <em>a tu ritmo.</em></h1><p>Un lugar para ordenar los días, acercar planes por zona y mantener a la vista lo que ya tiene fecha.</p><div class="hero-dates">08 — 23 <span>DICIEMBRE 2026</span></div></div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="cal-head"><span>Diciembre 2026 · 16 días</span><span class="art-caption">東京 · 京都 · 大阪</span></div>
+        <div class="cal-grid">
+          <span class="wd">L</span><span class="wd">M</span><span class="wd">X</span><span class="wd">J</span><span class="wd">V</span><span class="wd">S</span><span class="wd">D</span>
+          <span class="off">7</span><span class="tokio">8<i>Llegada</i></span><span class="tokio">9<i>Tokio</i></span><span class="tokio">10<i>Tokio</i></span><span class="tokio">11<i>Tokio</i></span><span class="tokio">12<i>Tokio</i></span><span class="tokio">13<i>Tokio</i></span>
+          <span class="kioto move">14<i>Kioto</i></span><span class="kioto">15<i>Kioto</i></span><span class="kioto">16<i>Kioto</i></span><span class="osaka move">17<i>Osaka</i></span><span class="osaka">18<i>Osaka</i></span><span class="tokio move">19<i>Tokio</i></span><span class="tokio">20<i>Tokio</i></span>
+          <span class="tokio">21<i>Tokio</i></span><span class="tokio">22<i>Tokio</i></span><span class="tokio">23<i>Salida</i></span><span class="off">24</span><span class="off">25</span><span class="off">26</span><span class="off">27</span>
+        </div>
+        <div class="cal-legend"><span class="tokio">Tokio</span><span class="kioto">Kioto</span><span class="osaka">Osaka</span><span>→ cambio de ciudad</span></div>
+      </div>
+    </section>
+
+    <section class="overview" aria-label="Resumen del viaje">
+      <div class="overview-item"><span class="over-num">01</span><div><b>Tokio</b><small>8—14 dic · 19—23 dic</small></div></div>
+      <div class="overview-item"><span class="over-num">02</span><div><b>Kioto</b><small>14—17 dic</small></div></div>
+      <div class="overview-item"><span class="over-num">03</span><div><b>Osaka</b><small>17—19 dic</small></div></div>
+      <div class="overview-item stat"><strong id="pendingCount">0</strong><small>planes por confirmar</small></div>
+    </section>
+
+    <main>
+      <div class="section-head"><div><div class="eyebrow">EL ITINERARIO</div><h2>Diseña cada día</h2><p>Arrastra un plan a otro día, o usa “Mover”. Los compromisos con candado permanecen en su fecha.</p></div><div class="view-switch" role="group" aria-label="Vista"><button id="daysViewBtn" class="active" type="button">Por días</button><button id="citiesViewBtn" type="button">Por ciudades</button></div></div>
+      <div class="controls"><div class="city-filters" id="cityFilters" role="group" aria-label="Filtrar ciudad"></div><label class="search-wrap"><span>⌕</span><input id="search" type="search" placeholder="Buscar actividad o zona" aria-label="Buscar actividad o zona"></label></div>
+      <div class="planner-layout"><div id="planner" class="planner"></div><aside class="sidebar"><div class="side-card fixed-card"><div class="side-kicker">EN FIRME</div><h3>Lo que no se mueve</h3><div class="fixed-list"><div><span>08 DIC</span><p>Llegada a Tokio <small>Vuelo a Narita · 16:30</small></p></div><div><span>10 DIC</span><p>Daikoku, por la noche <small>Visita reservada · hora por confirmar</small></p></div><div><span>14 DIC</span><p>Tokio → Kioto <small>Cambio de ciudad</small></p></div><div><span>17 DIC</span><p>Kioto → Osaka <small>Cambio de ciudad</small></p></div><div><span>19 DIC</span><p>Osaka → Tokio <small>Cambio de ciudad</small></p></div></div></div><div class="side-card address-card"><div class="side-kicker">PRIMERA BASE · TOKIO</div><h3>SHITAMACHI BASE</h3><p>5-chōme-41-3-203 Mukōjima, Sumida-ku, Tokyo 131-0033</p><div class="address-note">8—14 dic · primera estancia</div></div><div class="side-card travel-card"><div class="side-kicker">TRASLADOS</div><h3>Tiempos orientativos</h3><p>Desde Oshiage, antes de caminatas, esperas y cambios largos.</p><div class="travel-row"><span>Akihabara</span><b>10–20 min</b></div><div class="travel-row"><span>Yokohama</span><b>45–55 min</b></div><div class="travel-row"><span>Hakone</span><b>2–3 h aprox.</b></div><div class="travel-row"><span>Tokio → Kioto</span><b>2–3 h aprox.</b></div><div class="travel-row"><span>Kioto → Osaka</span><b>30–60 min aprox.</b></div><small>Son referencias para planear; comprueba la ruta y los horarios antes de salir.</small></div></aside></div>
+
+      <section class="ideas-section" aria-labelledby="ideas-title"><div class="section-head ideas-head"><div><div class="eyebrow">ESPACIO PARA CAMBIAR DE OPINIÓN</div><h2 id="ideas-title">Ideas sin fecha</h2><p>Guarda aquí alternativas y colócalas cuando encajen mejor.</p></div><button class="primary" id="addBtn" type="button">+ Añadir actividad</button></div><div id="ideas" class="ideas-grid"></div></section>
+      <section class="notes-section"><div><div class="eyebrow">ANTES DE SALIR</div><h2>Datos por confirmar</h2></div><div class="unknown-grid"><div><span>01</span><b>Reservas y entradas</b><p>TeamLabs, Universal Studios, Super Nintendo World y museos: verificar disponibilidad, horarios y accesos.</p></div><div><span>02</span><b>Traslados y puntos de encuentro</b><p>El horario y punto de encuentro de Daikoku, así como los trenes entre ciudades, siguen por confirmar aquí.</p></div><div><span>03</span><b>Otros alojamientos</b><p>Las direcciones y detalles de Kioto, Osaka y la segunda estancia en Tokio no se muestran como confirmados.</p></div></div></section>
+    </main>
+    <footer><span>JAPÓN · DICIEMBRE 2026</span><span>Tu plan se guarda solo en este navegador.</span></footer>
+  </div>
+
+  <dialog id="editDialog"><form method="dialog" id="editForm"><div class="dialog-head"><div><div class="eyebrow">AJUSTAR PLAN</div><h2 id="dialogTitle">Actividad</h2></div><button type="button" class="icon-btn" id="closeDialog" aria-label="Cerrar">×</button></div><label>Actividad<input id="activityTitle" required maxlength="90"></label><div class="form-row"><label>Zona<input id="activityZone" maxlength="60" placeholder="Por confirmar"></label><label>Día<select id="activityDay"></select></label></div><div class="form-row"><label>Momento<select id="activityTime"><option>Mañana</option><option>Tarde</option><option>Noche</option><option>Flexible</option></select></label><label>Estado<select id="activityStatus"><option value="pendiente">Pendiente</option><option value="reservar">Por reservar</option><option value="reservado">Reservado</option></select></label></div><label>Traslado orientativo<input id="activityTransit" maxlength="100" placeholder="Por confirmar"></label><label>Nota<textarea id="activityNote" rows="3" maxlength="350" placeholder="Detalles útiles o dudas"></textarea></label><div class="dialog-actions"><button type="button" class="danger" id="deleteActivity">Eliminar</button><button type="submit" class="primary">Guardar cambios</button></div></form></dialog>
+  <dialog id="resetDialog"><div class="dialog-head"><h2>¿Restablecer el plan?</h2><button type="button" class="icon-btn" id="closeReset">×</button></div><p>Se perderán los cambios guardados en este navegador. El itinerario volverá a la propuesta inicial.</p><div class="dialog-actions"><button type="button" class="ghost" id="cancelReset">Cancelar</button><button type="button" class="primary" id="confirmReset">Restablecer</button></div></dialog>
+  <script src="app.js"></script>
+</body>
+</html>
